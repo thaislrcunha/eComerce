@@ -13,6 +13,9 @@ public class PagamentoCartaoCredito implements IPagamento {
             return false;
         }
     }
+    public StatusPagamento getStatus(){
+        return statusPagamento;
+    }
 
     public String getNumeroCartao(){
         return numeroCartao;}

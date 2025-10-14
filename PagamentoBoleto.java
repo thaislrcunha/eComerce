@@ -5,8 +5,12 @@ public class PagamentoBoleto implements IPagamento {
 
     @Override
     public boolean processarPagamento( double valor){
-        statusPagamento = statusPagamento.APROVADO;
+        statusPagamento = StatusPagamento.APROVADO;
         return true;
+    }
+
+    public StatusPagamento getStatus(){
+        return statusPagamento;
     }
 
     public String getCodigoBarras(){

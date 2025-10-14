@@ -21,14 +21,14 @@ public class SistemaPedidos {
         Produto laptop = new Produto("Laptop Lenovo", 1200.00);
 
         //PEDIDO 01 -> testar CRÉDITO R$150.00
-        Pedido pedido1 = new Pedido(clientePF1, 1, "aberto", LocalDate.now());
+        Pedido pedido1 = new Pedido(clientePF1, 1, LocalDate.now());
         pedido1.adicionarItem(teclado,1);
         IPagamento cartao1 = new PagamentoCartaoCredito();
         pedido1.setMetodoPagamento(cartao1);
         cartao1.processarPagamento(pedido1.calcularTotal());
 
         //PEDIDO 02 -> testar CRÉDITO R$500.00
-        Pedido pedido2 = new Pedido(clientePJ1, 2, "aberto", LocalDate.now());
+        Pedido pedido2 = new Pedido(clientePJ1, 2, LocalDate.now());
         pedido2.adicionarItem(teclado, 3);
         pedido2.adicionarItem(mouse, 1);
         IPagamento cartao2 = new PagamentoCartaoCredito();
@@ -36,7 +36,7 @@ public class SistemaPedidos {
         cartao2.processarPagamento(pedido2.calcularTotal());
 
         //PEDIDO 03 -> testar BOLETO R$800.00
-        Pedido pedido3 = new Pedido(clientePF1, 3, "aberto", LocalDate.now());
+        Pedido pedido3 = new Pedido(clientePF1, 3, LocalDate.now());
         pedido3.adicionarItem(teclado, 4);
         pedido3.adicionarItem(mouse, 3);
         pedido3.adicionarItem(mousePad, 5);
@@ -45,7 +45,7 @@ public class SistemaPedidos {
         boleto1.processarPagamento(pedido3.calcularTotal());
 
         //PEDIDO 04 -> testar BOLETO R$1500.00
-        Pedido pedido4 = new Pedido(clientePJ1, 4, "aberto", LocalDate.now());
+        Pedido pedido4 = new Pedido(clientePJ1, 4, LocalDate.now());
         pedido4.adicionarItem(laptop, 1);
         pedido4.adicionarItem(teclado, 1);
         pedido4.adicionarItem(mouse, 3);
@@ -76,6 +76,5 @@ public class SistemaPedidos {
                 }
             }
         }
-
     }
 }
