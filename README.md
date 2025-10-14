@@ -1,4 +1,4 @@
 # Sistema eComerce em Java
-Projeto 1 de um sistema simples para praticar **POO** em Java.
+Projeto de um sistema simples para praticar **POO** em Java.
 
-Compile e rode a classe main SistemaPedidos.
+<img src = "imagens/UML_tarefa5.png" width = "200">
