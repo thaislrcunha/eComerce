@@ -1,10 +1,17 @@
 public class PagamentoCartaoCredito implements IPagamento {
 
     private String numeroCartao;
+    private StatusPagamento statusPagamento;
 
     @Override
     public boolean processarPagamento( double valor){
-        return valor<200.0; //para o if não ficar redundante
+        if(valor<5000.00){
+            statusPagamento = StatusPagamento.APROVADO;
+            return true;
+        } else {
+            statusPagamento = StatusPagamento.RECUSADO;
+            return false;
+        }
     }
 
     public String getNumeroCartao(){
