@@ -89,14 +89,9 @@ public class Pedido {
         if (metodoPagamento == null) return false;
     
         boolean aprovado = metodoPagamento.processarPagamento(this.calcularTotal());
-        
-        /*if (aprovado){
-            statusPedido = StatusPedido.PROCESSANDO;
-        } else  statusPedido = StatusPedido.PENDENTE;
-         */
-        aprovado? statusPedido = StatusPedido.PROCESSANDO : StatusPedido.PENDENTE;
-        
-        
+
+        statusPedido = aprovado? StatusPedido.PROCESSANDO : StatusPedido.PENDENTE;
+
         return aprovado;
     }
 
